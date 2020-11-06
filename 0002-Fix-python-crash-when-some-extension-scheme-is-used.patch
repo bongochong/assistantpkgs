@@ -1,0 +1,31 @@
+From 155895dec221a8a7d69bbae132404a1628e93dbb Mon Sep 17 00:00:00 2001
+From: Mamoru TASAKA <mtasaka@fedoraproject.org>
+Date: Thu, 1 Oct 2020 10:24:58 +0900
+Subject: [PATCH] Fix python crash when some extension scheme is used.
+
+When some extension scheme is specified for the folder to search files,
+gtk_file_chooser_get_filename() can return empty string.
+Fix crash when such schema is used.
+---
+ catfish/CatfishSearchEngine.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/catfish/CatfishSearchEngine.py b/catfish/CatfishSearchEngine.py
+index 9d7ff64..5033671 100644
+--- a/catfish/CatfishSearchEngine.py
++++ b/catfish/CatfishSearchEngine.py
+@@ -169,6 +169,11 @@ class CatfishSearchEngine:
+             else:
+                 keys.append(key)
+ 
++        # path may be empty when some "extension" scheme is used in URL
++        if not path:
++            self.stop()
++            return
++
+         # For simplicity, make sure the path contains a trailing '/'
+         if not path.endswith('/'):
+             path += '/'
+-- 
+2.28.0
+
