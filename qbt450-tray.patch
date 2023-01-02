@@ -1,7 +1,7 @@
-Index: /builddir/build/SOURCES/qbittorrent-4.5.0/src/app/application.cpp
+Index: qbittorrent-4.5.0/src/app/application.cpp
 ===================================================================
---- /builddir/build/SOURCES/qbittorrent-4.5.0.orig/src/app/application.cpp	2022-11-26 16:16:23.000000000 -0500
-+++ /builddir/build/SOURCES/qbittorrent-4.5.0/src/app/application.cpp	2023-01-02 14:18:17.144113689 -0500
+--- qbittorrent-4.5.0/src/app/application.cpp	2022-11-26 16:16:23.000000000 -0500
++++ qbittorrent-4.5.0/src/app/application.cpp	2023-01-02 14:18:17.144113689 -0500
 @@ -706,7 +706,7 @@
  #ifndef DISABLE_GUI
      UIThemeManager::initInstance();
