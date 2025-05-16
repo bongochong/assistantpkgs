@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=TkDiff
+Name[fr]=TkDiff
+GenericName=Diff Frontend
+GenericName[fr]=Interface Diff
+Comment=Graphical Front-End for diff
+Comment[fr]=Interface graphique pour Diff
+Exec=tkdiff
+Icon=/usr/share/pixmaps/tkdiff.png
+Terminal=false
+Categories=RevisionControl;Development;ProjectManagement;
